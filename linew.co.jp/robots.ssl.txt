@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-admin/
+Disallow: /uploads/wpo-plugins-tables-list.json
+
+Sitemap: https://linew.co.jp/sitemap.xml
+Sitemap: https://linew.co.jp/sitemap.rss

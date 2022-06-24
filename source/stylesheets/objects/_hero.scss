@@ -1,0 +1,36 @@
+/*=============================================================================
+  ヒーローイメージ
+=============================================================================*/
+
+body.top > .hero {
+  grid-column: 1 / -1;
+  grid-row: hero;
+
+  #vegas-slider {
+    height: calc(100vh - 112px);
+  }
+}
+
+.hero {
+  display: grid;
+
+  .h1 {
+    padding-top: calc(100vh - 112px - 4em);
+    padding-left: 1em;
+    color: black;
+    font-weight: bold;
+    text-shadow:
+           3px 3px 5px white, -3px -3px 5px white,
+          -3px 3px 5px white,  3px -3px 5px white;
+
+    strong {
+      color: transparent;
+      background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: larger;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ffe6c5;
+    }
+  }
+}

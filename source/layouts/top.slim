@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    / 文字コードの指定
+    meta charset="utf-8"
+    / ビューポート(視野)の記述。(iPhoneでの快適な閲覧用)
+    meta name="viewport" content="width=device-width"
+    / 表題の設定 ブラウザのタブに表示される
+    title
+      = current_page.data.title || "さくら商会"
+
+    / 誤って検索されない為に
+    meta name="robots" content="noindex"
+
+    / ファビコン(小さなアイコン)とアップルタッチアイコンの指定
+    / https://ao-system.net/favicongenerator/ で作成できる
+    = favicon_tag 'favicon.ico'
+    = favicon_tag 'apple-touch-icon-180x180.png',
+              rel:   'apple-touch-icon',
+              sizes: '180x180',
+              type:  'image/png'
+
+    / 検索エンジン用にサイトの紹介文章 目安80文字
+    meta name="description" content="さくら商会はお花見など各種イベントで皆様の楽しい人生を演出しています。"
+
+    / Google Fonts
+    link rel="preconnect" href="https://fonts.googleapis.com"
+    link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"
+    link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap"
+
+    / Font Awesome フォントアイコン(≒絵文字)が使えるようになる
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+
+    / jQuery JavaScriptのための便利なライブラリ
+    script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+
+    / Fomantic-UI CSSフレームワーク
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"
+
+    / vegas 全画面 スライドショー
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"
+
+    / CSSアニメーションの為のライブラリ animate.css を CDNから取得する
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+
+    / Smooth Scroll ページ内リンクをクリックすると滑らかにスクロールする
+    script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"
+
+    / このサイトのためのスタイルシートを読み込む (style.cssを読み込む)
+    = stylesheet_link_tag "style"
+
+    / このサイトのためのJavaScriptを読み込む (site.jsを読み込む)
+    = javascript_include_tag "site"
+
+  body.top
+    / この = yield が、index.html.slim等、各々の内容に置き換えられる
+    = yield
+
+    // スムーススクロール
+    javascript:
+      let scroll = new SmoothScroll('a[href*="#"]', {
+        easing:'easeInOutQuint'
+      })

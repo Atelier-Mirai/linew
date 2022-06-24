@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*=============================================================================
+  layout
+  パーツの配置や、ラッパーとしての幅や高さなどを決定するクラス
+=============================================================================*/
+/* CSS グリッドにより ページ全体の配置を設定する */
+body.top {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  /* 左右に 20px の余白 を取る */
+  grid-template-rows: [head] clamp(80px, 16vw, 112px) [hero] calc(100vh - clamp(80px, 16vw, 112px)) [foot] auto;
+  row-gap: 20px; }
+
+body.top > * {
+  grid-column: 2 / -2; }
+
+/* デスクトップ環境 */
+@media (min-width: 768px) {
+  body.top {
+    /* 中央は6列 */
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    column-gap: 5%; } }
+
+/* このような配置のためのCSSをお好みでいろいろ記述 */
+/* 左寄せ指定
+-----------------------------------------------------------------------------*/
+.lefted.text {
+  text-align: left !important; }
+
+/* 中央揃え指定
+-----------------------------------------------------------------------------*/
+.centered.text {
+  text-align: center !important; }
+
+/* 右寄せ指定
+-----------------------------------------------------------------------------*/
+.righted.text {
+  text-align: right !important; }

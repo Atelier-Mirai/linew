@@ -1,0 +1,111 @@
+/*=============================================================================
+  ヘッダー
+=============================================================================*/
+@mixin w-container {
+  display: grid;
+  grid-template-columns:
+    minmax(4%, 1fr)
+    minmax(auto, 1166px)
+    minmax(4%, 1fr);
+
+  & > * {
+    grid-column: 2;
+  }
+}
+
+.header {
+  height: 112px; // 高さ固定
+  height: clamp(80px, 16vw, 112px); // 80px - 112px まで 高さ可変
+  background: #ffffff80;
+
+  position: sticky;
+  z-index: 10;
+
+  @include w-container;
+
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbtn {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $nibiiro;
+    font-size: 32px;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0 -75% 0 100%;
+    z-index: 100;
+    background: rgba($sakurairo, 0.85);
+    transition: transform 0.3s;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      display: grid;
+      gap: 40px;
+      margin-top: calc(calc(100vh - 152px) / 2);
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      color: white;
+
+    }
+
+    @media (min-width: 768px) {
+      position: revert;
+      inset: revert;
+      background: revert;
+      ul {
+        grid-auto-flow: column;
+        margin-top: revert;
+        color: revert;
+        a {
+          color: $nibiiro;
+        }
+      }
+    }
+  }
+}
+
+// ハンバーガーの色 ≡
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: $sanaeiro !important;
+}
+
+// ハンバーガーの色 x
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: $shinonomeiro !important;
+}
+
+.open {
+  .navbtn {
+    z-index: 110;
+    color: white;
+    .fa-bars  { display: none; }
+    .fa-times { display: revert; }
+  }
+
+  .nav {
+    transform: translate(-100%, 0);
+  }
+  body {
+    position: fixed;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,635 @@
+@charset "UTF-8";
+/*=============================================================================
+  object
+  ページをまたいで使われる各種パーツを定義するクラス
+=============================================================================*/
+/*=============================================================================
+  調整用のクラス
+  margin、padding、font-size、colorなどを付与するのに使用
+=============================================================================*/
+.kyohiiro {
+  color: #ff251e !important; }
+
+.bg-kyohiiro {
+  background: #ff251e !important; }
+
+.shinonomeiro {
+  color: #f19072 !important; }
+
+.bg-shinonomeiro {
+  background: #f19072 !important; }
+
+.nanohanairo {
+  color: #ffec47 !important; }
+
+.bg-nanohanairo {
+  background: #ffec47 !important; }
+
+.sanaeiro {
+  color: #67a70c !important; }
+
+.bg-sanaeiro {
+  background: #67a70c !important; }
+
+.amairo {
+  color: #2ca9e1 !important; }
+
+.bg-amairo {
+  background: #2ca9e1 !important; }
+
+.utsushiiro {
+  color: #3d6eda !important; }
+
+.bg-utsushiiro {
+  background: #3d6eda !important; }
+
+.botaniro {
+  color: #e7609e !important; }
+
+.bg-botaniro {
+  background: #e7609e !important; }
+
+.ayameiro {
+  color: #674196 !important; }
+
+.bg-ayameiro {
+  background: #674196 !important; }
+
+.otomeiro {
+  color: #f3cccc !important; }
+
+.bg-otomeiro {
+  background: #f3cccc !important; }
+
+.momijiiro {
+  color: #a61017 !important; }
+
+.bg-momijiiro {
+  background: #a61017 !important; }
+
+.nibiiro {
+  color: #9ea1a3 !important; }
+
+.bg-nibiiro {
+  background: #9ea1a3 !important; }
+
+.kurohairo {
+  color: #0d0d0d !important; }
+
+.bg-kurohairo {
+  background: #0d0d0d !important; }
+
+.sakurairo {
+  color: #fef4f4 !important; }
+
+.bg-sakurairo {
+  background: #fef4f4 !important; }
+
+.natsukazeiro {
+  color: transparent !important; }
+
+.bg-natsukazeiro {
+  background: transparent !important; }
+
+/* mixin */
+.m-0 {
+  margin: 0 !important; }
+
+.mt-0,
+.my-0 {
+  margin-top: 0 !important; }
+
+.mr-0,
+.mx-0 {
+  margin-right: 0 !important; }
+
+.mb-0,
+.my-0 {
+  margin-bottom: 0 !important; }
+
+.ml-0,
+.mx-0 {
+  margin-left: 0 !important; }
+
+.m-1 {
+  margin: 0.25rem !important; }
+
+.mt-1,
+.my-1 {
+  margin-top: 0.25rem !important; }
+
+.mr-1,
+.mx-1 {
+  margin-right: 0.25rem !important; }
+
+.mb-1,
+.my-1 {
+  margin-bottom: 0.25rem !important; }
+
+.ml-1,
+.mx-1 {
+  margin-left: 0.25rem !important; }
+
+.m-2 {
+  margin: 0.5rem !important; }
+
+.mt-2,
+.my-2 {
+  margin-top: 0.5rem !important; }
+
+.mr-2,
+.mx-2 {
+  margin-right: 0.5rem !important; }
+
+.mb-2,
+.my-2 {
+  margin-bottom: 0.5rem !important; }
+
+.ml-2,
+.mx-2 {
+  margin-left: 0.5rem !important; }
+
+.m-3 {
+  margin: 1rem !important; }
+
+.mt-3,
+.my-3 {
+  margin-top: 1rem !important; }
+
+.mr-3,
+.mx-3 {
+  margin-right: 1rem !important; }
+
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important; }
+
+.ml-3,
+.mx-3 {
+  margin-left: 1rem !important; }
+
+.m-4 {
+  margin: 1.5rem !important; }
+
+.mt-4,
+.my-4 {
+  margin-top: 1.5rem !important; }
+
+.mr-4,
+.mx-4 {
+  margin-right: 1.5rem !important; }
+
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important; }
+
+.ml-4,
+.mx-4 {
+  margin-left: 1.5rem !important; }
+
+.m-5 {
+  margin: 3rem !important; }
+
+.mt-5,
+.my-5 {
+  margin-top: 3rem !important; }
+
+.mr-5,
+.mx-5 {
+  margin-right: 3rem !important; }
+
+.mb-5,
+.my-5 {
+  margin-bottom: 3rem !important; }
+
+.ml-5,
+.mx-5 {
+  margin-left: 3rem !important; }
+
+.p-0 {
+  padding: 0 !important; }
+
+.pt-0,
+.py-0 {
+  padding-top: 0 !important; }
+
+.pr-0,
+.px-0 {
+  padding-right: 0 !important; }
+
+.pb-0,
+.py-0 {
+  padding-bottom: 0 !important; }
+
+.pl-0,
+.px-0 {
+  padding-left: 0 !important; }
+
+.p-1 {
+  padding: 0.25rem !important; }
+
+.pt-1,
+.py-1 {
+  padding-top: 0.25rem !important; }
+
+.pr-1,
+.px-1 {
+  padding-right: 0.25rem !important; }
+
+.pb-1,
+.py-1 {
+  padding-bottom: 0.25rem !important; }
+
+.pl-1,
+.px-1 {
+  padding-left: 0.25rem !important; }
+
+.p-2 {
+  padding: 0.5rem !important; }
+
+.pt-2,
+.py-2 {
+  padding-top: 0.5rem !important; }
+
+.pr-2,
+.px-2 {
+  padding-right: 0.5rem !important; }
+
+.pb-2,
+.py-2 {
+  padding-bottom: 0.5rem !important; }
+
+.pl-2,
+.px-2 {
+  padding-left: 0.5rem !important; }
+
+.p-3 {
+  padding: 1rem !important; }
+
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important; }
+
+.pr-3,
+.px-3 {
+  padding-right: 1rem !important; }
+
+.pb-3,
+.py-3 {
+  padding-bottom: 1rem !important; }
+
+.pl-3,
+.px-3 {
+  padding-left: 1rem !important; }
+
+.p-4 {
+  padding: 1.5rem !important; }
+
+.pt-4,
+.py-4 {
+  padding-top: 1.5rem !important; }
+
+.pr-4,
+.px-4 {
+  padding-right: 1.5rem !important; }
+
+.pb-4,
+.py-4 {
+  padding-bottom: 1.5rem !important; }
+
+.pl-4,
+.px-4 {
+  padding-left: 1.5rem !important; }
+
+.p-5 {
+  padding: 3rem !important; }
+
+.pt-5,
+.py-5 {
+  padding-top: 3rem !important; }
+
+.pr-5,
+.px-5 {
+  padding-right: 3rem !important; }
+
+.pb-5,
+.py-5 {
+  padding-bottom: 3rem !important; }
+
+.pl-5,
+.px-5 {
+  padding-left: 3rem !important; }
+
+.m-auto {
+  margin: auto !important; }
+
+.mt-auto,
+.my-auto {
+  margin-top: auto !important; }
+
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important; }
+
+.mb-auto,
+.my-auto {
+  margin-bottom: auto !important; }
+
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important; }
+
+.w-25 {
+  width: 25% !important; }
+
+.w-50 {
+  width: 50% !important; }
+
+.w-75 {
+  width: 75% !important; }
+
+.w-100 {
+  width: 100% !important; }
+
+.mw-100 {
+  max-width: 100% !important; }
+
+.h-25 {
+  height: 25% !important; }
+
+.h-50 {
+  height: 50% !important; }
+
+.h-75 {
+  height: 75% !important; }
+
+.h-100 {
+  height: 100% !important; }
+
+.mh-100 {
+  max-height: 100% !important; }
+
+.w-auto {
+  width: auto !important; }
+
+.h-auto {
+  height: auto !important; }
+
+/*=============================================================================
+  テキストの為の飾り付け
+=============================================================================*/
+/* 大きさ指定
+-----------------------------------------------------------------------------*/
+.mini.text {
+  font-size: 0.4rem !important; }
+
+.tiny.text {
+  font-size: 0.5rem !important; }
+
+.small.text {
+  font-size: 0.75rem !important; }
+
+.medium.text {
+  font-size: 1rem !important; }
+
+.large.text {
+  font-size: 1.5rem !important; }
+
+.big.text {
+  font-size: 2rem !important; }
+
+.huge.text {
+  font-size: 4rem !important; }
+
+.massive.text {
+  font-size: 8rem !important; }
+
+/* リードテキスト
+-----------------------------------------------------------------------------*/
+.lead.text {
+  font-size: 1.1rem; }
+
+/*=============================================================================
+  ヘッダー
+=============================================================================*/
+.header {
+  height: 112px;
+  height: clamp(80px, 16vw, 112px);
+  background: #ffffff80;
+  position: sticky;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: minmax(4%, 1fr) minmax(auto, 1166px) minmax(4%, 1fr); }
+  .header > * {
+    grid-column: 2; }
+  .header .header-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    height: 100%; }
+  .header .navbtn {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #9ea1a3;
+    font-size: 32px; }
+    @media (min-width: 768px) {
+      .header .navbtn {
+        display: none; } }
+  .header .nav {
+    position: fixed;
+    inset: 0 -75% 0 100%;
+    z-index: 100;
+    background: rgba(254, 244, 244, 0.85);
+    transition: transform 0.3s; }
+    .header .nav ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 40px;
+      margin-top: calc(calc(100vh - 152px) / 2);
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      color: white; }
+    @media (min-width: 768px) {
+      .header .nav {
+        position: revert;
+        inset: revert;
+        background: revert; }
+        .header .nav ul {
+          grid-auto-flow: column;
+          margin-top: revert;
+          color: revert; }
+          .header .nav ul a {
+            color: #9ea1a3; } }
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: #67a70c !important; }
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #f19072 !important; }
+
+.open .navbtn {
+  z-index: 110;
+  color: white; }
+  .open .navbtn .fa-bars {
+    display: none; }
+  .open .navbtn .fa-times {
+    display: revert; }
+
+.open .nav {
+  transform: translate(-100%, 0); }
+
+.open body {
+  position: fixed;
+  overflow: hidden; }
+
+/*=============================================================================
+  ヒーローイメージ
+=============================================================================*/
+body.top > .hero {
+  grid-column: 1 / -1;
+  grid-row: hero; }
+  body.top > .hero #vegas-slider {
+    height: calc(100vh - 112px); }
+
+.hero {
+  display: grid; }
+  .hero .h1 {
+    padding-top: calc(100vh - 112px - 4em);
+    padding-left: 1em;
+    color: black;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px white, -3px -3px 5px white, -3px 3px 5px white,  3px -3px 5px white; }
+    .hero .h1 strong {
+      color: transparent;
+      background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: larger;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ffe6c5; }
+
+@use "utilities" as *;
+/* スクロールを促す
+-----------------------------------------------------------------------------*/
+.scroll.down {
+  position: absolute;
+  bottom: 10px;
+  left: 50%; }
+
+/* Scrollという文字表示の設定 */
+.scroll.down span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: #fef4f4;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl; }
+
+/* 丸の描写 */
+.scroll.down::before {
+  content: "";
+  /* 描画位置 */
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  /* 丸の形状 */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fef4f4;
+  /* 丸の動き */
+  animation: circlemove 1.6s ease-in-out infinite, circlemovehide 1.6s ease-in-out infinite; }
+
+@keyframes circlemove {
+  0% {
+    bottom: 45px; }
+  100% {
+    bottom: -5px; } }
+
+@keyframes circlemovehide {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  80% {
+    opacity: 0.9; }
+  100% {
+    opacity: 0; } }
+
+/* 線の描写 */
+.scroll.down::after {
+  content: "";
+  /* 表示位置 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* 線の形状 */
+  width: 2px;
+  height: 50px;
+  background: #fef4f4; }
+
+/*=============================================================================
+  フッター
+=============================================================================*/
+body.top footer {
+  grid-row: foot;
+  grid-column: 1 / -1; }
+
+footer.footer {
+  grid-row: foot;
+  display: grid;
+  grid-template-columns: minmax(4%, 1fr) minmax(auto, 1166px) minmax(4%, 1fr);
+  grid-template-rows: 1fr;
+  background: #0d0d0d;
+  color: #fef4f4; }
+  footer.footer > * {
+    grid-column: 2 / -2; }
+  footer.footer .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; }
+    footer.footer .footer-container .company_info {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center; }
+    footer.footer .footer-container .nav_area {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr; }
+      footer.footer .footer-container .nav_area nav {
+        grid-row: 1; }
+      footer.footer .footer-container .nav_area ul.footer-nav {
+        display: grid;
+        grid-auto-flow: column;
+        align-self: center;
+        gap: 1em; }
+        footer.footer .footer-container .nav_area ul.footer-nav a {
+          color: #fef4f4; }
+          footer.footer .footer-container .nav_area ul.footer-nav a:hover {
+            color: #3d6eda; }
+      footer.footer .footer-container .nav_area ul.ourservice_list {
+        grid-row: 2;
+        display: grid;
+        grid-auto-flow: column;
+        align-self: center;
+        gap: 1em; }
+        footer.footer .footer-container .nav_area ul.ourservice_list a {
+          color: #fef4f4; }
+          footer.footer .footer-container .nav_area ul.ourservice_list a:hover {
+            color: #3d6eda; }
+        footer.footer .footer-container .nav_area ul.ourservice_list a.button {
+          border: solid 1px #fef4f4;
+          border-radius: 3px;
+          padding: 1em; }

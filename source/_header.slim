@@ -1,0 +1,43 @@
+/ ヘッダー
+header.header
+  .header-container
+    / ロゴマーク
+    .logo
+      a href="#"
+        img alt="株式会社LiNew" src="https://linew.co.jp/wp-content/themes/linew/library/images/logo_green.svg"
+
+    / ハンバーガーボタン
+    / https://jonsuh.com/hamburgers/
+    button.navbtn.hamburger.hamburger--spin
+      span.hamburger-box
+        span.hamburger-inner
+      span.sr-only
+        | MENU
+
+
+    / ナビゲーションメニュー
+    nav.nav
+      ul
+        li
+          a href="#"  News
+        li
+          a href="#"  About
+        li
+          a href="#"  Service
+        li
+          a href="#"  Recruit
+        li
+          a href="#"  Contact
+
+javascript:
+  document.querySelector('.navbtn.hamburger').addEventListener('click', () => {
+    document.querySelector('html').classList.toggle('open');
+    document.querySelector('.navbtn.hamburger').classList.toggle('is-active');
+  });
+
+  document.querySelectorAll('nav a').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.querySelector('html').classList.toggle('open');
+      document.querySelector('.navbtn.hamburger').classList.toggle('is-active');
+    });
+  });

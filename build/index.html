@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>【練習】LiNew</title>
+    <meta name="robots" content="noindex" />
+    <link href="images/favicon.ico" rel="icon" type="image/ico" /><link href="images/apple-touch-icon-180x180.png" rel="apple-touch-icon" type="image/png" sizes="180x180" />
+    <meta name="description" content="さくら商会はお花見など各種イベントで皆様の楽しい人生を演出しています。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <link href="stylesheets/style.css" rel="stylesheet" /><script src="javascripts/site.js"></script>
+  </head>
+  <body class="top">
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <a href="#"><img alt="株式会社LiNew" src="https://linew.co.jp/wp-content/themes/linew/library/images/logo_green.svg" /></a>
+        </div>
+        <button class="navbtn hamburger hamburger--spin"><span class="hamburger-box"><span class="hamburger-inner"></span></span><span class="sr-only">MENU</span></button>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#"> News</a>
+            </li>
+            <li>
+              <a href="#"> About</a>
+            </li>
+            <li>
+              <a href="#"> Service</a>
+            </li>
+            <li>
+              <a href="#"> Recruit</a>
+            </li>
+            <li>
+              <a href="#"> Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <script>
+      document.querySelector('.navbtn.hamburger').addEventListener('click', () => {
+        document.querySelector('html').classList.toggle('open');
+        document.querySelector('.navbtn.hamburger').classList.toggle('is-active');
+      });
+      
+      document.querySelectorAll('nav a').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.querySelector('html').classList.toggle('open');
+          document.querySelector('.navbtn.hamburger').classList.toggle('is-active');
+        });
+      });
+    </script><section class="hero">
+      <div id="vegas-slider">
+        <h1 class="h1">
+          世の中の課題をITで解決し、<br /><strong>関わった世界中の人たちを幸せにする</strong>
+        </h1>
+      </div>
+      <div class="scroll down">
+        <span>Scroll</span>
+      </div>
+    </section>
+    <script>
+      // 設定に関して
+      // https://vegas.jaysalvat.com/documentation/settings/
+      $('#vegas-slider').vegas({
+        overlay: true,
+        transition: 'blur',
+        transition: 'fade',
+        transitionDuration: 2000,
+        delay: 10000,
+        animationDuration: 20000,
+        animation: 'kenburns',
+        slides: [{ src: "images/vegas1.webp" },
+                 { src: "images/vegas2.webp" },
+                 { src: "images/vegas3.webp" },
+                 { src: "images/vegas4.webp" },
+                 { src: "images/vegas5.webp" }]
+      });
+    </script><footer class="footer">
+      <div class="footer-container">
+        <div class="company_info">
+          <p class="h1 logo">
+            <a href="#" rel="nofollow"><img alt="株式会社LiNew" data-eio="l" src="https://linew.co.jp/wp-content/themes/linew/library/images/logo_white.svg" /></a>
+          </p>
+          <p class="address">
+            〒150-0002<br />東京都渋谷区渋谷3丁目6-20　第５矢木ビル 5F<br />03-6453-8617"
+          </p>
+          <p class="source-org copyright">
+            &copy; 2022 株式会社さくら商会.
+          </p>
+        </div>
+        <div class="nav_area">
+          <ul class="footer-nav">
+            <li>
+              <a href="#"> News</a>
+            </li>
+            <li>
+              <a href="#"> About</a>
+            </li>
+            <li>
+              <a href="#"> Service</a>
+            </li>
+            <li>
+              <a href="#"> Recruit</a>
+            </li>
+            <li>
+              <a href="#"> Contact</a>
+            </li>
+          </ul>
+          <ul class="ourservice_list">
+            <li>
+              <a class="button" href="#" target="_blank">educure<i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li>
+              <a class="button" href="#" target="_blank">TECH Passion<i class="fas fa-arrow-right"></i></a>
+            </li>
+            <li>
+              <a class="button" href="#" target="_blank">人生を変える英会話アプリ<i class="fas fa-arrow-right"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div id="content">
+      <div id="inner-content" class="cf">
+        <main id="main" class="cf" itemprop="mainContentOfPage" itemscope="" itemtype="http://schema.org/Blog" role="main">
+          <section id="ourservice" class="graybg">
+            <div class="inner mainwid">
+              <h1 class="section_title">
+                Our Service
+              </h1>
+              <ul class="ourservice_list">
+                <li>
+                  <div class="img ex">
+                    <img alt="educure" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/05/educure01-1024x683.jpg" />
+                  </div>
+                  <div class="txt ex">
+                    <a href="https://lp.educure.jp/" target="_blank"></a>
+                    <h2>
+                      <img alt="educure" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/05/black-300x96.png" />
+                    </h2>
+                    <div class="catch">
+                      <p>
+                        DXを推進する エンジニア育成
+                      </p>
+                    </div>
+                    <p class="excerpt">
+                      IT事業参入をご検討中の事業者様向けのサービスです。
+                    </p>
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </li>
+                <li>
+                  <div class="img ex">
+                    <img alt="TECH Passion" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/05/techpassion01-1024x683.jpg" />
+                  </div>
+                  <div class="txt ex">
+                    <a href="https://techpassion.jp/" target="_blank"></a>
+                    <h2>
+                      <img alt="TECH Passion" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/05/logo.png" />
+                    </h2>
+                    <div class="catch">
+                      <p>
+                        未経験から<br />本気でエンジニアへ
+                      </p>
+                    </div>
+                    <p class="excerpt">
+                      「未経験から本気でエンジニア」を目指すプログラミングスクールです。
+                    </p>
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </li>
+                <li>
+                  <div class="img ex">
+                    <img alt="人生を変える英会話アプリ" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/10/6c40ac7b707e13491fda6a6b4f02d82d-1024x597.jpg" />
+                  </div>
+                  <div class="txt ex">
+                    <a href="https://lp.redfire.jp/" target="_blank"></a>
+                    <h2>
+                      <img alt="人生を変える英会話アプリ" data-eio="l" src="https://linew.co.jp/wp-content/uploads/2021/10/abb886337b510d088a858a59a12bf114.png" />
+                    </h2>
+                    <div class="catch">
+                      <p>
+                        人生を変える英会話アプリ
+                      </p>
+                    </div>
+                    <p class="excerpt">
+                      登録者数約25万人! YouTuber講師ジョージ監修！ オンライン英会話アプリ！
+                    </p>
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </li>
+              </ul>
+              <div class="other_btn_area">
+                <a class="other_btn" href="service/index.html">Other service<i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </section>
+          <section id="ourvision" class="lazyload" data-bg="https://linew.co.jp/https://linew.co.jp/wp-content/uploads/2021/05/bg01.jpg" style="">
+            <div class="inner mainwid">
+              <h1 class="section_title">
+                Our Vision
+              </h1>
+              <h2 class="ov_h2 ex">
+                世の中の課題をITで解決して、<br />関わった<strong>世界中の人たちを幸せにする</strong>
+              </h2>
+              <ul class="ov_list">
+                <li class="ex">
+                  <p>
+                    ITを通じて<br />人々の可能性を広げる
+                  </p>
+                  <p class="sub">
+                    イノベーションを起こし新たな価値を創造する
+                  </p>
+                </li>
+                <li class="ex">
+                  <p>
+                    世界を代表する<br />自社サービスを作る
+                  </p>
+                  <p class="sub">
+                    世の中にインパクトを与える
+                  </p>
+                </li>
+                <li class="ex">
+                  <p>
+                    世界から選ばれる<br />企業へ
+                  </p>
+                  <p class="sub">
+                    常に最高のパフォーマンスを発揮します
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section id="news" class="graybg">
+            <div class="inner mainwid">
+              <h1 class="section_title">
+                News
+              </h1>
+              <div class="news_article_list">
+                <article id="post-2506" class="cf ex ex_fade_down post-2506 post type-post status-publish format-standard has-post-thumbnail hentry category-pressrelease category-40 category-ownproduct tag-educure" role="article">
+                  <div class="img">
+                    <figure>
+                      <a href="#" title="【プレスリリース】ニーズが増大するAIや機械学習エンジニアの人材不足を解決"><img class="attachment-medium size-medium wp-post-image" alt="" src="https://linew.co.jp/wp-content/uploads/2021/05/prtimes-300x158.png" height="158" width="300" loading="lazy" /></a>
+                    </figure>
+                  </div>
+                  <div class="txt">
+                    <div class="meta">
+                      <time class="updated entry-time" datetime="2022-06-03" itemprop="datePublished">2022-06-03</time>
+                      <ul class="post-categories">
+                        <li>
+                          <a href="#">プレスリリース</a>
+                        </li>
+                        <li>
+                          <a href="#">メディア</a>
+                        </li>
+                        <li>
+                          <a href="#">自社サービス</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <h1 class="entry-title">
+                      <a href="#" title="【プレスリリース】ニーズが増大するAIや機械学習エンジニアの人材不足を解決">【プレスリリース】ニーズが増大するAIや機械学習エンジニアの人材不足を解決</a>
+                    </h1>
+                  </div>
+                </article>
+                <article>
+                  <div class="img">
+                    <figure>
+                      <a href="#" title="【プレスリリース】人材派遣会社Evand株式会社がDXを推進するサービスを導入"><img class="attachment-medium size-medium wp-post-image" alt="" src="https://linew.co.jp/wp-content/uploads/2022/02/7e6a0316f2b4799aecdc2a40b55c6549-3-e1647488626371-300x211.png" width="300" height="211" loading="lazy" /></a>
+                    </figure>
+                  </div>
+                  <div class="txt">
+                    <div class="meta">
+                      <time class="updated entry-time" datetime="2022-02-22" itemprop="datePublished"> 2022-02-22</time>
+                      <ul class="post-categories">
+                        <li>
+                          <a href="#">プレスリリース</a>
+                        </li>
+                        <li>
+                          <a href="#">メディア</a>
+                        </li>
+                        <li>
+                          <a href="#">自社サービス</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <h1 class="entry-title">
+                      <a href="#" title="【プレスリリース】販売職・コールセンターに強い人材派遣会社Evand株式会社がDXを推進するリスキリング(再教育)サービス「Educure（エドゥキュア）」を導入"> 【プレスリリース】販売職・コールセンターに強い人材派遣会社Evand株式会社がDXを推進するリスキリング(再教育)サービス「Educure（エドゥキュア）」を導入</a>
+                    </h1>
+                  </div>
+                </article>
+              </div>
+              <div class="other_btn_area">
+                <a class="other_btn" href="news/index.html"><Other>news</Other><i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </section>
+          <section id="aboutus" class="lazyload" data-bg="https://linew.co.jp/https://linew.co.jp/wp-content/uploads/2021/05/bg02.jpg" style="">
+            <div class="inner mainwid">
+              <h1 class="section_title">
+                About Us
+              </h1>
+              <div class="aboutus_info_wrap">
+                <div class="aboutus_info ex ex_fade_up">
+                  <div class="tr">
+                    <p class="th">
+                      会社名
+                    </p>
+                    <p class="td">
+                      株式会社LiNew
+                    </p>
+                  </div>
+                  <div class="tr">
+                    <p class="th">
+                      代表
+                    </p>
+                    <p class="td">
+                      CEO 西本弘昌<br />COO 井上陽介
+                    </p>
+                  </div>
+                  <div class="tr">
+                    <p class="th">
+                      資本金
+                    </p>
+                    <p class="td">
+                      500万円
+                    </p>
+                  </div>
+                  <div class="tr">
+                    <p class="th">
+                      事業内容
+                    </p>
+                    <p class="td">
+                      コンサルティング/システム開発、受託開発/教育・研修/アウトソーシング
+                    </p>
+                  </div>
+                  <div class="tr">
+                    <p class="th">
+                      本社住所
+                    </p>
+                    <p class="td">
+                      〒150-0002<br />東京都渋谷区渋谷3丁目6-20　第５矢木ビル 5F<a class="link" href="https://goo.gl/maps/RQvbBd8oKFUX2Pif9" target="_blank">GoogleMap<i class="fas fa-external-link-alt"></i></a>
+                    </p>
+                  </div>
+                </div>
+                <div class="aboutus_pic ex ex_fade_down">
+                  <figure>
+                    <img src="https://linew.co.jp/wp-content/ewww/lazy/placeholder-1024x768.png" />
+                  </figure>
+                </div>
+              </div>
+              <div class="other_btn_area">
+                <a class="other_btn" href="about/index.html"><More>info</More><i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </section>
+          <section id="recruit" class="graybg">
+            <div class="inner mainwid">
+              <h1 class="section_title">
+                Recruit
+              </h1>
+              <div class="rec_catch ex ex_fade_down">
+                <p>
+                  熱いパッションを持っている<strong>あなた</strong>を待っています。
+                </p>
+              </div>
+              <div class="recruit_box ex ex_fade_down">
+                <h2 class="h3">
+                  現在募集中の職種
+                </h2>
+                <ul class="recruit_list">
+                  <li>
+                    <a class="btn" href="#" title="エンジニア"><エンジニア></エンジニア><i class="fas fa-arrow-right"></i></a>
+                  </li>
+                  <li>
+                    <a class="btn" href="#" title="営業"><営業></営業><i class="fas fa-arrow-right"></i></a>
+                  </li>
+                  <li>
+                    <a class="btn" href="#" title="PR・広報"><PR>・広報</PR><i class="fas fa-arrow-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="other_btn_area">
+                <a class="other_btn" href="#">More info<i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script>
+      let scroll = new SmoothScroll('a[href*="#"]', {
+        easing:'easeInOutQuint'
+      })
+    </script>
+  </body>
+</html>

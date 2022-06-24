@@ -1,0 +1,31 @@
+section.hero
+  / 全画面で絵が切り替わるヒーローイメージ
+  #vegas-slider
+    h1.h1
+      | 世の中の課題をITで解決し、
+      br
+      strong
+        | 関わった世界中の人たちを幸せにする
+
+  / スクロールを促す為のアニメーション
+  .scroll.down
+    span
+      | Scroll
+
+javascript:
+  // 設定に関して
+  // https://vegas.jaysalvat.com/documentation/settings/
+  $('#vegas-slider').vegas({
+    overlay: true,
+    transition: 'blur',
+    transition: 'fade',
+    transitionDuration: 2000,
+    delay: 10000,
+    animationDuration: 20000,
+    animation: 'kenburns',
+    slides: [{ src: "images/vegas1.webp" },
+             { src: "images/vegas2.webp" },
+             { src: "images/vegas3.webp" },
+             { src: "images/vegas4.webp" },
+             { src: "images/vegas5.webp" }]
+  });
